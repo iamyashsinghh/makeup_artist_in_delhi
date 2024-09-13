@@ -1,0 +1,51 @@
+import Header from "@/components/layout.js/Header";
+import BreadCrumb from "@/components/miscellaneous/NavigationHeader";
+import VendorBasicInfo from "./vendorbasicinfo/VendorBasicInfo";
+import { useRouter } from "next/router";
+import Policies from "./policy/Policies";
+import SimilarVendors from "./similarvendor/SimilarVendor";
+import ImageSlider from "@/components/venue/venuedetailspage/imageslider/ImageSlider";
+import HaveUsCallYou from "@/components/miscellaneous/haveuscallyou/HaveUsCallYou";
+import { useGlobalContext } from "@/context/MyContext";
+
+export default function VendorDetailsPage({ response }) {
+  // console.log(response)
+  const router = useRouter();
+
+  const { setLeadFormData, setIsLeadsModelOpen } = useGlobalContext();
+
+  const { similar_vendors, vendor } = response.data;
+  // console.log(similar_vendors,vendor)
+
+  const openLeadsModel = (e, v_slug = vendor?.slug, v_id = vendor?.id) => {
+    const leadData = {
+      url: router.asPath,
+      venue_id: v_id,
+      venue_slug: v_slug,
+      type: "click",
+      request_handle_by: "form",
+    };
+    // console.log(leadData)
+
+    //Setting the data to the form
+    setLeadFormData(leadData);
+
+    //Opening the lead model
+    setIsLeadsModelOpen(true);
+
+    if (e) {
+      e.stopPropagation();
+    }
+  };
+  return (
+    <>
+      <Header />
+      <BreadCrumb meta_title={vendor.meta_title} />
+      <ImageSlider images={vendor.images} altname ={vendor.brand_name} wb_assured={vendor?.wb_assured} />
+      <VendorBasicInfo vendor={vendor} openLeadsModel={openLeadsModel} />
+      <HaveUsCallYou />
+      <Policies />
+      {similar_vendors && <SimilarVendors vendors={similar_vendors} />}
+    </>
+  );
+}
