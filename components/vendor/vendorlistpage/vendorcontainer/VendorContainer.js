@@ -94,7 +94,7 @@ function VendorContainer({ city, lists, locality, category, count, localities, v
             "@type": "ListItem",
             "position": index + 1,
             "name": item?.brand_name,
-            "url": `https://weddingbanquets.in/${selectedCity}/${item?.slug}`
+            "url": `https://bestmakeupartistindelhi.com/${item?.get_locality.slug}/${item?.slug}`
         }))
     };
 
@@ -103,9 +103,9 @@ function VendorContainer({ city, lists, locality, category, count, localities, v
         {
             "@context": "http://schema.org",
             "@type": "Organization",
-            "name": "weddingbanquets.in",
-            "url": "https://weddingbanquets.in",
-            "logo": "https://weddingbanquets.in/_next/image?url=%2Flogo.png&w=3840&q=75",
+            "name": "bestmakeupartistindelhi.com",
+            "url": "https://bestmakeupartistindelhi.com",
+            "logo": "https://bestmakeupartistindelhi.com/_next/image?url=%2Flogo.png&w=3840&q=75",
             "sameAs": [
                 "",
                 "https://www.instagram.com/weddingbanquetsindia/",
@@ -125,7 +125,7 @@ function VendorContainer({ city, lists, locality, category, count, localities, v
                 "name": `${item?.brand_name}`,
                 "image": imagesArray.length > 0
                     ? `https://cms.wbcrm.in/storage/uploads/${imagesArray[0].trim()}`
-                    : "https://weddingbanquets.in/_next/image?url=%2Flogo.png&w=3840&q=75",         
+                    : "https://bestmakeupartistindelhi.com/_next/image?url=%2Flogo.png&w=3840&q=75",         
 "priceRange": `INR${Number(item?.package_price) > 0 ? Number(item.package_price) : 20000}-INR${Number(item?.package_price) > 0 ? Number(item.package_price) + 10000 : 300000}`,
                 "telephone": `+91${item?.phone}`,
                 "address": {
@@ -136,7 +136,7 @@ function VendorContainer({ city, lists, locality, category, count, localities, v
                     "postalCode": "110085",
                     "addressCountry": "IN"
                 },
-                "url": `https://weddingbanquets.in/${item?.get_city.slug}/${item?.slug}`
+                "url": `https://bestmakeupartistindelhi.com/${item?.get_locality.slug}/${item?.slug}`
             };        
         })
     ];
@@ -156,9 +156,9 @@ let jsonDataRS = `{
     "name": "${category.replaceAll("-", " ")} in ${locality === "all" ? city : locality}",
     "image": "${imagesArray && imagesArray.length > 0
         ? `https://cms.wbcrm.in/storage/uploads/${imagesArray[0].trim()}`
-        : "https://weddingbanquets.in/_next/image?url=%2Flogo.png&w=3840&q=75"}",
+        : "https://bestmakeupartistindelhi.com/_next/image?url=%2Flogo.png&w=3840&q=75"}",
          "telephone": "+918882198989",
-    "url": "https://weddingbanquets.in/${category}/${city}/${filterQuery.locality}",
+    "url": "https://bestmakeupartistindelhi.com",
     "address": {
         "@type": "PostalAddress",
       "addressLocality": "${capitalizeFirstLetter(locality === 'all' ? city : locality)}",
