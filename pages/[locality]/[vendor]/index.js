@@ -5,30 +5,30 @@ import { useRouter } from "next/router";
 export default function Page({ response }) {
   const router = useRouter();
  
-    const jsonLdData = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": { "@id": "https://weddingbanquets.in", "name": "Wedding Banquets" }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@id": `https://weddingbanquets.in/${response.city.slug}`,
-            "name": response.city.name
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": { "name": response.data.vendor.brand_name }
-        }
-      ]
-    };
+    // const jsonLdData = {
+    //   "@context": "https://schema.org",
+    //   "@type": "BreadcrumbList",
+    //   "itemListElement": [
+    //     {
+    //       "@type": "ListItem",
+    //       "position": 1,
+    //       "item": { "@id": "https://bestmakeupartistindelhi.com", "name": "Wedding Banquets" }
+    //     },
+    //     {
+    //       "@type": "ListItem",
+    //       "position": 2,
+    //       "item": {
+    //         "@id": `https://bestmakeupartistindelhi.com/${response.city.slug}`,
+    //         "name": response.city.name
+    //       }
+    //     },
+    //     {
+    //       "@type": "ListItem",
+    //       "position": 3,
+    //       "item": { "name": response.data.vendor.brand_name }
+    //     }
+    //   ]
+    // };
     return (
       <>
         <Head>
@@ -40,16 +40,16 @@ export default function Page({ response }) {
             content={
               response.data.vendor && response.data.vendor.images
                 ? `${process.env.MEDIA_PREFIX}/${response.data.vendor.images.split(',')[0]}`
-                : 'https://weddingbanquets.in/twitter-img.png'
+                : 'https://bestmakeupartistindelhi.com/twitter-img.png'
             }
           />
           <meta property="og:title" content={response.data.vendor.meta_title} />
           <meta property="og:description" content={response.data.vendor.meta_description} />
-          <meta property="og:url" content={`https://weddingbanquets.in${router.asPath}`} />
-          <script
+          <meta property="og:url" content={`https://bestmakeupartistindelhi.com${router.asPath}`} />
+          {/* <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
-          />
+          /> */}
         </Head>
         <VendorDetailsPage response={response} />
       </>

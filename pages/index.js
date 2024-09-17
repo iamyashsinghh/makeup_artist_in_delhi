@@ -15,41 +15,41 @@ function Venue(props) {
     }
   }, [props.city]);
 
-  const jsonLdData2 = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": { "@id": "https://weddingbanquets.in", "name": "Wedding Banquets" }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@id": `https://weddingbanquets.in/${props.category}`,
-          "name": props.category.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": `https://weddingbanquets.in/${props.city}`,
-          "name": props.city.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@id": `https://weddingbanquets.in/${props.locality}`,
-          "name": props.locality.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
-        }
-      },
-    ]
-  };
+  // const jsonLdData2 = {
+  //   "@context": "https://schema.org",
+  //   "@type": "BreadcrumbList",
+  //   "itemListElement": [
+  //     {
+  //       "@type": "ListItem",
+  //       "position": 1,
+  //       "item": { "@id": "https://weddingbanquets.in", "name": "Wedding Banquets" }
+  //     },
+  //     {
+  //       "@type": "ListItem",
+  //       "position": 2,
+  //       "item": {
+  //         "@id": `https://weddingbanquets.in/${props.category}`,
+  //         "name": props.category.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
+  //       }
+  //     },
+  //     {
+  //       "@type": "ListItem",
+  //       "position": 3,
+  //       "item": {
+  //         "@id": `https://weddingbanquets.in/${props.city}`,
+  //         "name": props.city.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
+  //       }
+  //     },
+  //     {
+  //       "@type": "ListItem",
+  //       "position": 4,
+  //       "item": {
+  //         "@id": `https://weddingbanquets.in/${props.locality}`,
+  //         "name": props.locality.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
+  //       }
+  //     },
+  //   ]
+  // };
 
   return (
     <>
@@ -57,27 +57,25 @@ function Venue(props) {
         <title>{props.result.meta?.meta_title}</title>
         <meta name="description" content={props.result.meta?.meta_description} />
         <meta name="keywords" content={props.result.meta?.meta_keywords} />
-        <link rel="canonical" href={`https://weddingbanquets.in${router.asPath}`} />
+        <link rel="canonical" href={`https://bestmakeupartistindelhi.com${router.asPath}`} />
         <meta property="og:title" content={props.result.meta?.meta_title} />
         <meta property="og:description" content={props.result.meta?.meta_description} />
         <meta property="og:image" content={
             props.result && props.result.data && props.result.data.length > 0 && props.result.data[0].images
               ? `${process.env.MEDIA_PREFIX || '/default/prefix'}/${props.result.data[0].images.split(',')[0]}`
-              : 'https://weddingbanquets.in/twitter-img.png'
+              : 'https://bestmakeupartistindelhi.com/twitter-img.png'
           } 
         />
-        <meta property="og:url" content={`https://weddingbanquets.in${router.asPath}`} />
+        <meta property="og:url" content={`https://bestmakeupartistindelhi.com${router.asPath}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.result.meta?.meta_title} />
         <meta name="twitter:description" content={props.result.meta?.meta_description} />
         <meta name="twitter:image" content={
             props.result && props.result.data && props.result.data.length > 0 && props.result.data[0].images
               ? `${process.env.MEDIA_PREFIX || '/default/prefix'}/${props.result.data[0].images.split(',')[0]}`
-              : 'https://weddingbanquets.in/twitter-img.png'
+              : 'https://bestmakeupartistindelhi.com/twitter-img.png'
           }
         />
-        <meta name="twitter:site" content="@yourtwitterhandle" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData2) }} />
       </Head>
           <VendorListPage data={{ ...props, localities }} />
           <FooterVendors />
