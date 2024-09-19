@@ -193,7 +193,7 @@ let jsonDataRS = `{
             <Section className="section section-vendor-container">
                 <div className="sticky-head">
                     <div className="page-title">
-                        <h1 className="main-title">{`${category.replaceAll("-", " ").replace(/top|best/g, '').trim()}  in ${locality === "all" ? city : locality}`}</h1>
+                        <h2 className="main-title">{`${category.replaceAll("-", " ").replace(/top|best/g, '').trim()}  in ${locality === "all" ? city : locality}`}</h2>
                         <span className="count">{` Total result : ${count || 0} `}</span>
                     </div>
                     <div className="filter-btn" onClick={() => { setShowFilter(true) }}>
