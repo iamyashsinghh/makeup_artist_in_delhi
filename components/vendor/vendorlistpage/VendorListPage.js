@@ -1,14 +1,15 @@
-import Header from "@/components/layout.js/Header";
-import Pagedescription from "@/components/miscellaneous/pagedescription/PageDescription";
+import dynamic from 'next/dynamic';
 import { useGlobalContext } from "@/context/MyContext";
-import VendorTopFilter from "@/components/miscellaneous/VendorTopFilter";
-import VendorContainer from "./vendorcontainer/VendorContainer";
-import SideFilter from "./filter/SideFilter";
+
+const Header = dynamic(() => import('@/components/layout.js/Header'));
+const Pagedescription = dynamic(() => import('@/components/miscellaneous/pagedescription/PageDescription'));
+const VendorTopFilter = dynamic(() => import('@/components/miscellaneous/VendorTopFilter'));
+const VendorContainer = dynamic(() => import('./vendorcontainer/VendorContainer'));
+const SideFilter = dynamic(() => import('./filter/SideFilter'));
 
 export default function VendorListPage(props) {
-  const { category, city, locality, result,localities, filterQuery } = props.data;
+  const { category, city, locality, result, localities, filterQuery } = props.data;
   const { vendorCategories, venueCategories } = useGlobalContext();
-
 
   return (
     <>
@@ -30,15 +31,15 @@ export default function VendorListPage(props) {
         filterQuery={filterQuery}
       />
       <VendorContainer 
-      lists={result.data}
-      locality={locality}
-      category={category}
-      count={result.count}
-      city={city}
-      localities={localities}
-      venueCategories={venueCategories}
-      vendorCategories={vendorCategories}
-      filterQuery={filterQuery}
+        lists={result.data}
+        locality={locality}
+        category={category}
+        count={result.count}
+        city={city}
+        localities={localities}
+        venueCategories={venueCategories}
+        vendorCategories={vendorCategories}
+        filterQuery={filterQuery}
       />
       <Pagedescription caption={result.meta?.caption} />
     </>
