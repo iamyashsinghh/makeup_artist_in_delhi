@@ -55,12 +55,6 @@ function VenueCard2({
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const router = useRouter();
 
-  // const categoryValues = vendor.venue_category_ids;
-  // const mapCategoryNames = (categoryValues) => {
-  //   return categoryValues.split(',').map(category => category.trim());
-  // };
-
-  // const categories = mapCategoryNames(categoryValues)
   return (
     <Wrapper>
       <div className="image-slider">
@@ -85,7 +79,7 @@ function VenueCard2({
               <Image
                 src={`${process.env.NEXT_PUBLIC_MEDIA_PREFIX}/${image}`}
                 fill
-                quality={100}
+                quality={10}
                 sizes="(100vw)"
                 title={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
                 alt={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
@@ -118,7 +112,7 @@ function VenueCard2({
               <Image
                 src={`${process.env.NEXT_PUBLIC_MEDIA_PREFIX}/${image}`}
                 fill
-                quality={100}
+                quality={10}
                 sizes="(100vw)"
                 title={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
                 alt={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
