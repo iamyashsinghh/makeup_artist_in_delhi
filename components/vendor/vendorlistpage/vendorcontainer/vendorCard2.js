@@ -79,7 +79,7 @@ function VenueCard2({
               <Image
                 src={`${process.env.NEXT_PUBLIC_MEDIA_PREFIX}/${image}`}
                 fill
-                quality={10}
+                quality={1}
                 sizes="(100vw)"
                 title={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
                 alt={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
@@ -112,7 +112,7 @@ function VenueCard2({
               <Image
                 src={`${process.env.NEXT_PUBLIC_MEDIA_PREFIX}/${image}`}
                 fill
-                quality={10}
+                quality={1}
                 sizes="(100vw)"
                 title={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
                 alt={locality === "all" ? `${category.replaceAll( "-", " ")} in ${city.replaceAll("-", " ")}` : `${category.replaceAll( "-", " ")} in ${locality.replaceAll("-", " ")}`}
