@@ -57,7 +57,7 @@ function WhatNext() {
                                 />
                             </div>
                             <div className="item-details">
-                                <h2 className="title">Exclusive WeddingBanquets Manager</h2>
+                                <h2 className="title">Contact The Expert</h2>
                                 <p className="description">A dedicated Relationship Manager to help you finalise the right vendor.</p>
                             </div>
                             <BsThreeDotsVertical className="dot" sizes={30} />
