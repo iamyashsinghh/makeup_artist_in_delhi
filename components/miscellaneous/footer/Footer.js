@@ -40,7 +40,7 @@ function Footer() {
                                 <Link href={`http://weddingbanquets.in/banquet-halls/${selectedCity}/all`} className='f-link'>Wedding venues</Link>
                             </li>
                             <li>
-                                <Link href={`http://weddingbanquets.in/top-makeup-artists//${selectedCity}/all`} className='f-link'>Photographer</Link>
+                                <Link href={`http://weddingbanquets.in/top-makeup-artists/${selectedCity}/all`} className='f-link'>Photographer</Link>
                             </li>
                             <li>
                                 <Link href={`/`} className='f-link'>Makeup Artist</Link>

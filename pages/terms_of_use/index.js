@@ -155,7 +155,6 @@ export default function Page() {
                 </article>
            </section>
         </div>
-
     </Wrapper>)
 }
 
