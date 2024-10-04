@@ -12,6 +12,7 @@ import WhatNext from "@/components/makeup-artist/WhatNext";
 import Contact from "@/components/makeup-artist/Contact";
 import Offer from "@/components/miscellaneous/Offer";
 import { useGlobalContext } from "@/context/MyContext";
+import Head from "next/head";
 
 function MakeupArtists() {
   const router = useRouter();
@@ -148,6 +149,9 @@ function MakeupArtists() {
 
   return (
     <>
+    <Head>
+      <title>Best Makeup Artist in Delhi</title>
+    </Head>
       <Wrapper>
         <nav>
           <Image
